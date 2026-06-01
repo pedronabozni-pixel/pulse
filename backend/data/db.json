@@ -1,0 +1,959 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Administrador SESMT",
+      "email": "admin@saolucas.com.br",
+      "password_hash": "$2a$10$UGV9BPlzMesonGAsKfapou49v/1M8DyiEHgJ6dCraakQTmbYMnTQ6",
+      "role": "admin",
+      "sector": "SESMT",
+      "created_at": "2026-06-01T16:52:53.701Z"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Carlos Silva",
+      "email": "dr.silva@saolucas.com.br",
+      "password_hash": "$2a$10$ZLafvh6Zi3AoCvxxHzfk6u358aWffb/S3Qsk1oxRzIc4GVNslAQDe",
+      "role": "manager",
+      "sector": "UTI",
+      "created_at": "2026-06-01T16:52:53.764Z"
+    },
+    {
+      "id": 3,
+      "name": "Enf. Ana Santos",
+      "email": "enf.santos@saolucas.com.br",
+      "password_hash": "$2a$10$L8JbhvOEvHGpKwDbKlC1AepCAA9F3IesAB0bKdlCO11s/GGJt9Xe.",
+      "role": "viewer",
+      "sector": "Internação",
+      "created_at": "2026-06-01T16:52:53.826Z"
+    },
+    {
+      "id": 4,
+      "name": "Dra. Maria Costa",
+      "email": "dra.costa@saolucas.com.br",
+      "password_hash": "$2a$10$EOSPAI9/xOo6Mc3TmIilP.VQYNYn/IjJOrV9kbAPbvtTE1QNHzJyi",
+      "role": "viewer",
+      "sector": "Pronto-socorro",
+      "created_at": "2026-06-01T16:52:53.889Z"
+    },
+    {
+      "id": 5,
+      "name": "Roberto Alves (CFO)",
+      "email": "cfo@saolucas.com.br",
+      "password_hash": "$2a$10$amnrulcT2aAHUrXyUq8kDOHdp8SvaIn1AnFNj4afGLiLsG2WnkiEe",
+      "role": "cfo",
+      "sector": "Administrativo",
+      "created_at": "2026-06-01T16:52:53.951Z"
+    }
+  ],
+  "risks": [
+    {
+      "id": 1,
+      "perigo": "Sobrecarga de trabalho crônica e escalas 12h+",
+      "grupo_exposto": "Equipe de enfermagem completa",
+      "area": "UTI",
+      "probabilidade": 4,
+      "severidade": 4,
+      "medidas_implementadas": "Nenhuma implementada",
+      "nr_referencia": "NR-1 §1.5.3.2.1 / NR-17",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Crítico",
+      "nivel_risco_calculado": "Crítico",
+      "created_at": "2026-06-01T16:52:53.951Z"
+    },
+    {
+      "id": 2,
+      "perigo": "Violência de pacientes e acompanhantes (verbal/física)",
+      "grupo_exposto": "Médicos, Enfermeiros, Técnicos",
+      "area": "Pronto-socorro",
+      "probabilidade": 4,
+      "severidade": 4,
+      "medidas_implementadas": "Botão de pânico instalado em 2 pontos",
+      "nr_referencia": "NR-1 §1.5.3.2.1 / NR-32",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Crítico",
+      "nivel_risco_calculado": "Crítico",
+      "created_at": "2026-06-01T16:52:53.951Z"
+    },
+    {
+      "id": 3,
+      "perigo": "Desgaste emocional com morte e sofrimento contínuo",
+      "grupo_exposto": "Toda equipe assistencial UTI",
+      "area": "UTI",
+      "probabilidade": 4,
+      "severidade": 3,
+      "medidas_implementadas": "Nenhuma implementada",
+      "nr_referencia": "NR-1 §1.5.3.2.1",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Alto",
+      "nivel_risco_calculado": "Alto",
+      "created_at": "2026-06-01T16:52:53.952Z"
+    },
+    {
+      "id": 4,
+      "perigo": "Jornadas excessivas e acúmulo de horas extras",
+      "grupo_exposto": "Médicos plantonistas",
+      "area": "Pronto-socorro",
+      "probabilidade": 3,
+      "severidade": 4,
+      "medidas_implementadas": "Registro de ponto eletrônico instalado",
+      "nr_referencia": "NR-1 §1.5.3.2.1 / NR-17",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Alto",
+      "nivel_risco_calculado": "Alto",
+      "created_at": "2026-06-01T16:52:53.952Z"
+    },
+    {
+      "id": 5,
+      "perigo": "Trabalho em turnos noturnos contínuos sem rodízio",
+      "grupo_exposto": "Técnicos de enfermagem",
+      "area": "Internação",
+      "probabilidade": 4,
+      "severidade": 3,
+      "medidas_implementadas": "Escala com rodízio trimestral",
+      "nr_referencia": "NR-17 §17.6",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Alto",
+      "nivel_risco_calculado": "Alto",
+      "created_at": "2026-06-01T16:52:53.952Z"
+    },
+    {
+      "id": 6,
+      "perigo": "Assédio moral por chefia durante procedimentos",
+      "grupo_exposto": "Técnicos e auxiliares CC",
+      "area": "Centro Cirúrgico",
+      "probabilidade": 3,
+      "severidade": 3,
+      "medidas_implementadas": "Código de ética publicado na intranet",
+      "nr_referencia": "NR-1 §1.4.1.1 / Lei 14.457/2022",
+      "fonte": "Denúncia",
+      "status": "Ativo",
+      "nivel": "Alto",
+      "nivel_risco_calculado": "Alto",
+      "created_at": "2026-06-01T16:52:53.952Z"
+    },
+    {
+      "id": 7,
+      "perigo": "Pressão por produtividade e metas cirúrgicas",
+      "grupo_exposto": "Equipe cirúrgica completa",
+      "area": "Centro Cirúrgico",
+      "probabilidade": 3,
+      "severidade": 3,
+      "medidas_implementadas": "Reuniões mensais de equipe",
+      "nr_referencia": "NR-1 §1.5.3.2.1",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Alto",
+      "nivel_risco_calculado": "Alto",
+      "created_at": "2026-06-01T16:52:53.952Z"
+    },
+    {
+      "id": 8,
+      "perigo": "Falta de EPIs adequados para biossegurança",
+      "grupo_exposto": "Enfermagem e técnicos",
+      "area": "Internação",
+      "probabilidade": 2,
+      "severidade": 4,
+      "medidas_implementadas": "Solicitação de compra em andamento",
+      "nr_referencia": "NR-32 / NR-6",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Médio",
+      "nivel_risco_calculado": "Médio",
+      "created_at": "2026-06-01T16:52:53.952Z"
+    },
+    {
+      "id": 9,
+      "perigo": "Conflitos interpessoais entre equipes multidisciplinares",
+      "grupo_exposto": "Equipe multiprofissional",
+      "area": "Administrativo",
+      "probabilidade": 3,
+      "severidade": 2,
+      "medidas_implementadas": "Nenhuma implementada",
+      "nr_referencia": "NR-1 §1.5.3.2.1",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Médio",
+      "nivel_risco_calculado": "Médio",
+      "created_at": "2026-06-01T16:52:53.953Z"
+    },
+    {
+      "id": 10,
+      "perigo": "Exposição a agentes biológicos (COVID, HIV, Hepatite)",
+      "grupo_exposto": "Toda equipe assistencial",
+      "area": "UTI",
+      "probabilidade": 3,
+      "severidade": 4,
+      "medidas_implementadas": "Protocolos de biossegurança ativos",
+      "nr_referencia": "NR-32 §32.3",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Alto",
+      "nivel_risco_calculado": "Alto",
+      "created_at": "2026-06-01T16:52:53.953Z"
+    },
+    {
+      "id": 11,
+      "perigo": "Falta de autonomia nas decisões de trabalho",
+      "grupo_exposto": "Técnicos de enfermagem",
+      "area": "Administrativo",
+      "probabilidade": 2,
+      "severidade": 2,
+      "medidas_implementadas": "Nenhuma implementada",
+      "nr_referencia": "NR-17",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Baixo",
+      "nivel_risco_calculado": "Baixo",
+      "created_at": "2026-06-01T16:52:53.953Z"
+    },
+    {
+      "id": 12,
+      "perigo": "Ambiente físico precário: ruído e temperatura elevada",
+      "grupo_exposto": "Toda equipe PS",
+      "area": "Pronto-socorro",
+      "probabilidade": 3,
+      "severidade": 2,
+      "medidas_implementadas": "Laudo de engenharia pendente",
+      "nr_referencia": "NR-9 / NR-17",
+      "fonte": "PGR",
+      "status": "Ativo",
+      "nivel": "Médio",
+      "nivel_risco_calculado": "Médio",
+      "created_at": "2026-06-01T16:52:53.953Z"
+    },
+    {
+      "id": 13,
+      "perigo": "Risco identificado por denúncia: Sobrecarga",
+      "grupo_exposto": "A identificar (denúncia anônima)",
+      "area": "UTI",
+      "nivel": "Médio",
+      "probabilidade": 2,
+      "severidade": 3,
+      "nivel_risco_calculado": "Médio",
+      "medidas_implementadas": "Aguardando apuração da denúncia",
+      "nr_referencia": "NR-1 §1.4.1.1",
+      "fonte": "Denúncia",
+      "status": "Ativo",
+      "created_at": "2026-06-01T16:59:10.582Z"
+    }
+  ],
+  "actions": [
+    {
+      "id": 1,
+      "risk_id": 1,
+      "what": "Implantação de escala humanizada com limite de 10h/turno",
+      "why": "Reduzir sobrecarga e risco de burnout conforme NR-17",
+      "who": "SESMT + RH + Chefia UTI",
+      "when_date": "2024-06-30",
+      "where_loc": "UTI e Internação",
+      "how": "Revisão de escalas com software de gestão; contratar 15 técnicos adicionais",
+      "how_much": "R$ 180.000/ano",
+      "status": "Em andamento",
+      "responsible": "Gerência de RH",
+      "created_at": "2026-06-01T16:52:53.953Z"
+    },
+    {
+      "id": 2,
+      "risk_id": 2,
+      "what": "Implantação de protocolo ZERO VIOLÊNCIA com treinamento",
+      "why": "Proteger integridade física e psíquica conforme NR-32",
+      "who": "Equipe de Segurança + CIPA",
+      "when_date": "2024-05-15",
+      "where_loc": "Pronto-socorro",
+      "how": "Treinamento CNV; câmeras adicionais; protocolo de escalonamento",
+      "how_much": "R$ 45.000",
+      "status": "Não iniciado",
+      "responsible": "Coordenador de Segurança",
+      "created_at": "2026-06-01T16:52:53.953Z"
+    },
+    {
+      "id": 3,
+      "risk_id": 3,
+      "what": "Implantação de suporte psicológico plantonista",
+      "why": "Prevenir burnout e afastamentos conforme NR-1 2024",
+      "who": "Psicólogo clínico contratado",
+      "when_date": "2024-04-30",
+      "where_loc": "SESMT - sala dedicada",
+      "how": "Atendimento semanal individual e grupos de apoio mensais",
+      "how_much": "R$ 8.500/mês",
+      "status": "Em andamento",
+      "responsible": "SESMT",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 4,
+      "risk_id": 4,
+      "what": "Auditoria e regularização de banco de horas",
+      "why": "Conformidade CLT e redução de passivo trabalhista",
+      "who": "DP + Jurídico",
+      "when_date": "2024-04-15",
+      "where_loc": "Departamento Pessoal",
+      "how": "Levantamento de cartões-ponto; quitação de banco de horas; regramento formal",
+      "how_much": "R$ 25.000",
+      "status": "Atrasado",
+      "responsible": "Departamento Pessoal",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 5,
+      "risk_id": 1,
+      "what": "Programa de reconhecimento e plano de carreira",
+      "why": "Reduzir turnover de 28% para 15% em 18 meses",
+      "who": "RH + Direção",
+      "when_date": "2024-08-31",
+      "where_loc": "Toda a organização",
+      "how": "Bônus por desempenho + plano de carreira publicado + pesquisa de clima semestral",
+      "how_much": "R$ 60.000/ano",
+      "status": "Não iniciado",
+      "responsible": "Diretor de RH",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "session_token": "tok_UTI_0",
+      "sector": "UTI",
+      "turno": "Diurno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 75,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.957Z"
+    },
+    {
+      "id": 2,
+      "session_token": "tok_UTI_1",
+      "sector": "UTI",
+      "turno": "Noturno",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 72,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.957Z"
+    },
+    {
+      "id": 3,
+      "session_token": "tok_UTI_2",
+      "sector": "UTI",
+      "turno": "Plantonista",
+      "tempo_funcao": "3 a 5 anos",
+      "respostas": "{\"q1\":5,\"q2\":5,\"q3\":5,\"q4\":5,\"q5\":5,\"q6\":5,\"q7\":5,\"q8\":5,\"q9\":5,\"q10\":5,\"q11\":5,\"q12\":5,\"q13\":5,\"q14\":5,\"q15\":5,\"q16\":5,\"q17\":5,\"q18\":5,\"q19\":5,\"q20\":5,\"q21\":5,\"q22\":5,\"q23\":5,\"q24\":5,\"q25\":5,\"q26\":5,\"q27\":5,\"q28\":5,\"q29\":5,\"q30\":5,\"q31\":5,\"q32\":5}",
+      "score": 78,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.957Z"
+    },
+    {
+      "id": 4,
+      "session_token": "tok_UTI_3",
+      "sector": "UTI",
+      "turno": "Diurno",
+      "tempo_funcao": "Mais de 5 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 74,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.957Z"
+    },
+    {
+      "id": 5,
+      "session_token": "tok_UTI_4",
+      "sector": "UTI",
+      "turno": "Noturno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":5,\"q2\":5,\"q3\":5,\"q4\":5,\"q5\":5,\"q6\":5,\"q7\":5,\"q8\":5,\"q9\":5,\"q10\":5,\"q11\":5,\"q12\":5,\"q13\":5,\"q14\":5,\"q15\":5,\"q16\":5,\"q17\":5,\"q18\":5,\"q19\":5,\"q20\":5,\"q21\":5,\"q22\":5,\"q23\":5,\"q24\":5,\"q25\":5,\"q26\":5,\"q27\":5,\"q28\":5,\"q29\":5,\"q30\":5,\"q31\":5,\"q32\":5}",
+      "score": 76,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.957Z"
+    },
+    {
+      "id": 6,
+      "session_token": "tok_UTI_5",
+      "sector": "UTI",
+      "turno": "Plantonista",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 71,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.958Z"
+    },
+    {
+      "id": 7,
+      "session_token": "tok_Pronto-socorro_0",
+      "sector": "Pronto-socorro",
+      "turno": "Diurno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 68,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.958Z"
+    },
+    {
+      "id": 8,
+      "session_token": "tok_Pronto-socorro_1",
+      "sector": "Pronto-socorro",
+      "turno": "Noturno",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 65,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.958Z"
+    },
+    {
+      "id": 9,
+      "session_token": "tok_Pronto-socorro_2",
+      "sector": "Pronto-socorro",
+      "turno": "Plantonista",
+      "tempo_funcao": "3 a 5 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 70,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.958Z"
+    },
+    {
+      "id": 10,
+      "session_token": "tok_Pronto-socorro_3",
+      "sector": "Pronto-socorro",
+      "turno": "Diurno",
+      "tempo_funcao": "Mais de 5 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 72,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.958Z"
+    },
+    {
+      "id": 11,
+      "session_token": "tok_Pronto-socorro_4",
+      "sector": "Pronto-socorro",
+      "turno": "Noturno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 66,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.958Z"
+    },
+    {
+      "id": 12,
+      "session_token": "tok_Pronto-socorro_5",
+      "sector": "Pronto-socorro",
+      "turno": "Plantonista",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 69,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.958Z"
+    },
+    {
+      "id": 13,
+      "session_token": "tok_Internação_0",
+      "sector": "Internação",
+      "turno": "Diurno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 58,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.958Z"
+    },
+    {
+      "id": 14,
+      "session_token": "tok_Internação_1",
+      "sector": "Internação",
+      "turno": "Noturno",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 55,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.959Z"
+    },
+    {
+      "id": 15,
+      "session_token": "tok_Internação_2",
+      "sector": "Internação",
+      "turno": "Plantonista",
+      "tempo_funcao": "3 a 5 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 60,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.959Z"
+    },
+    {
+      "id": 16,
+      "session_token": "tok_Internação_3",
+      "sector": "Internação",
+      "turno": "Diurno",
+      "tempo_funcao": "Mais de 5 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 62,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.959Z"
+    },
+    {
+      "id": 17,
+      "session_token": "tok_Internação_4",
+      "sector": "Internação",
+      "turno": "Noturno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 57,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.959Z"
+    },
+    {
+      "id": 18,
+      "session_token": "tok_Internação_5",
+      "sector": "Internação",
+      "turno": "Plantonista",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 63,
+      "nivel_risco": "Alto",
+      "created_at": "2026-06-01T16:52:53.959Z"
+    },
+    {
+      "id": 19,
+      "session_token": "tok_Centro Cirúrgico_0",
+      "sector": "Centro Cirúrgico",
+      "turno": "Diurno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 52,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.959Z"
+    },
+    {
+      "id": 20,
+      "session_token": "tok_Centro Cirúrgico_1",
+      "sector": "Centro Cirúrgico",
+      "turno": "Noturno",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":3,\"q2\":3,\"q3\":3,\"q4\":3,\"q5\":3,\"q6\":3,\"q7\":3,\"q8\":3,\"q9\":3,\"q10\":3,\"q11\":3,\"q12\":3,\"q13\":3,\"q14\":3,\"q15\":3,\"q16\":3,\"q17\":3,\"q18\":3,\"q19\":3,\"q20\":3,\"q21\":3,\"q22\":3,\"q23\":3,\"q24\":3,\"q25\":3,\"q26\":3,\"q27\":3,\"q28\":3,\"q29\":3,\"q30\":3,\"q31\":3,\"q32\":3}",
+      "score": 50,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.959Z"
+    },
+    {
+      "id": 21,
+      "session_token": "tok_Centro Cirúrgico_2",
+      "sector": "Centro Cirúrgico",
+      "turno": "Plantonista",
+      "tempo_funcao": "3 a 5 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 55,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.959Z"
+    },
+    {
+      "id": 22,
+      "session_token": "tok_Centro Cirúrgico_3",
+      "sector": "Centro Cirúrgico",
+      "turno": "Diurno",
+      "tempo_funcao": "Mais de 5 anos",
+      "respostas": "{\"q1\":3,\"q2\":3,\"q3\":3,\"q4\":3,\"q5\":3,\"q6\":3,\"q7\":3,\"q8\":3,\"q9\":3,\"q10\":3,\"q11\":3,\"q12\":3,\"q13\":3,\"q14\":3,\"q15\":3,\"q16\":3,\"q17\":3,\"q18\":3,\"q19\":3,\"q20\":3,\"q21\":3,\"q22\":3,\"q23\":3,\"q24\":3,\"q25\":3,\"q26\":3,\"q27\":3,\"q28\":3,\"q29\":3,\"q30\":3,\"q31\":3,\"q32\":3}",
+      "score": 48,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.960Z"
+    },
+    {
+      "id": 23,
+      "session_token": "tok_Centro Cirúrgico_4",
+      "sector": "Centro Cirúrgico",
+      "turno": "Noturno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 53,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.960Z"
+    },
+    {
+      "id": 24,
+      "session_token": "tok_Centro Cirúrgico_5",
+      "sector": "Centro Cirúrgico",
+      "turno": "Plantonista",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":4,\"q2\":4,\"q3\":4,\"q4\":4,\"q5\":4,\"q6\":4,\"q7\":4,\"q8\":4,\"q9\":4,\"q10\":4,\"q11\":4,\"q12\":4,\"q13\":4,\"q14\":4,\"q15\":4,\"q16\":4,\"q17\":4,\"q18\":4,\"q19\":4,\"q20\":4,\"q21\":4,\"q22\":4,\"q23\":4,\"q24\":4,\"q25\":4,\"q26\":4,\"q27\":4,\"q28\":4,\"q29\":4,\"q30\":4,\"q31\":4,\"q32\":4}",
+      "score": 51,
+      "nivel_risco": "Médio",
+      "created_at": "2026-06-01T16:52:53.960Z"
+    },
+    {
+      "id": 25,
+      "session_token": "tok_Administrativo_0",
+      "sector": "Administrativo",
+      "turno": "Diurno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":3,\"q2\":3,\"q3\":3,\"q4\":3,\"q5\":3,\"q6\":3,\"q7\":3,\"q8\":3,\"q9\":3,\"q10\":3,\"q11\":3,\"q12\":3,\"q13\":3,\"q14\":3,\"q15\":3,\"q16\":3,\"q17\":3,\"q18\":3,\"q19\":3,\"q20\":3,\"q21\":3,\"q22\":3,\"q23\":3,\"q24\":3,\"q25\":3,\"q26\":3,\"q27\":3,\"q28\":3,\"q29\":3,\"q30\":3,\"q31\":3,\"q32\":3}",
+      "score": 33,
+      "nivel_risco": "Baixo",
+      "created_at": "2026-06-01T16:52:53.960Z"
+    },
+    {
+      "id": 26,
+      "session_token": "tok_Administrativo_1",
+      "sector": "Administrativo",
+      "turno": "Noturno",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":3,\"q2\":3,\"q3\":3,\"q4\":3,\"q5\":3,\"q6\":3,\"q7\":3,\"q8\":3,\"q9\":3,\"q10\":3,\"q11\":3,\"q12\":3,\"q13\":3,\"q14\":3,\"q15\":3,\"q16\":3,\"q17\":3,\"q18\":3,\"q19\":3,\"q20\":3,\"q21\":3,\"q22\":3,\"q23\":3,\"q24\":3,\"q25\":3,\"q26\":3,\"q27\":3,\"q28\":3,\"q29\":3,\"q30\":3,\"q31\":3,\"q32\":3}",
+      "score": 32,
+      "nivel_risco": "Baixo",
+      "created_at": "2026-06-01T16:52:53.960Z"
+    },
+    {
+      "id": 27,
+      "session_token": "tok_Administrativo_2",
+      "sector": "Administrativo",
+      "turno": "Plantonista",
+      "tempo_funcao": "3 a 5 anos",
+      "respostas": "{\"q1\":3,\"q2\":3,\"q3\":3,\"q4\":3,\"q5\":3,\"q6\":3,\"q7\":3,\"q8\":3,\"q9\":3,\"q10\":3,\"q11\":3,\"q12\":3,\"q13\":3,\"q14\":3,\"q15\":3,\"q16\":3,\"q17\":3,\"q18\":3,\"q19\":3,\"q20\":3,\"q21\":3,\"q22\":3,\"q23\":3,\"q24\":3,\"q25\":3,\"q26\":3,\"q27\":3,\"q28\":3,\"q29\":3,\"q30\":3,\"q31\":3,\"q32\":3}",
+      "score": 35,
+      "nivel_risco": "Baixo",
+      "created_at": "2026-06-01T16:52:53.960Z"
+    },
+    {
+      "id": 28,
+      "session_token": "tok_Administrativo_3",
+      "sector": "Administrativo",
+      "turno": "Diurno",
+      "tempo_funcao": "Mais de 5 anos",
+      "respostas": "{\"q1\":3,\"q2\":3,\"q3\":3,\"q4\":3,\"q5\":3,\"q6\":3,\"q7\":3,\"q8\":3,\"q9\":3,\"q10\":3,\"q11\":3,\"q12\":3,\"q13\":3,\"q14\":3,\"q15\":3,\"q16\":3,\"q17\":3,\"q18\":3,\"q19\":3,\"q20\":3,\"q21\":3,\"q22\":3,\"q23\":3,\"q24\":3,\"q25\":3,\"q26\":3,\"q27\":3,\"q28\":3,\"q29\":3,\"q30\":3,\"q31\":3,\"q32\":3}",
+      "score": 30,
+      "nivel_risco": "Baixo",
+      "created_at": "2026-06-01T16:52:53.960Z"
+    },
+    {
+      "id": 29,
+      "session_token": "tok_Administrativo_4",
+      "sector": "Administrativo",
+      "turno": "Noturno",
+      "tempo_funcao": "Menos de 1 ano",
+      "respostas": "{\"q1\":3,\"q2\":3,\"q3\":3,\"q4\":3,\"q5\":3,\"q6\":3,\"q7\":3,\"q8\":3,\"q9\":3,\"q10\":3,\"q11\":3,\"q12\":3,\"q13\":3,\"q14\":3,\"q15\":3,\"q16\":3,\"q17\":3,\"q18\":3,\"q19\":3,\"q20\":3,\"q21\":3,\"q22\":3,\"q23\":3,\"q24\":3,\"q25\":3,\"q26\":3,\"q27\":3,\"q28\":3,\"q29\":3,\"q30\":3,\"q31\":3,\"q32\":3}",
+      "score": 38,
+      "nivel_risco": "Baixo",
+      "created_at": "2026-06-01T16:52:53.961Z"
+    },
+    {
+      "id": 30,
+      "session_token": "tok_Administrativo_5",
+      "sector": "Administrativo",
+      "turno": "Plantonista",
+      "tempo_funcao": "1 a 3 anos",
+      "respostas": "{\"q1\":3,\"q2\":3,\"q3\":3,\"q4\":3,\"q5\":3,\"q6\":3,\"q7\":3,\"q8\":3,\"q9\":3,\"q10\":3,\"q11\":3,\"q12\":3,\"q13\":3,\"q14\":3,\"q15\":3,\"q16\":3,\"q17\":3,\"q18\":3,\"q19\":3,\"q20\":3,\"q21\":3,\"q22\":3,\"q23\":3,\"q24\":3,\"q25\":3,\"q26\":3,\"q27\":3,\"q28\":3,\"q29\":3,\"q30\":3,\"q31\":3,\"q32\":3}",
+      "score": 36,
+      "nivel_risco": "Baixo",
+      "created_at": "2026-06-01T16:52:53.961Z"
+    }
+  ],
+  "denuncias": [
+    {
+      "id": 1,
+      "protocolo": "PULSO-2024-001",
+      "tipo": "Assédio Moral",
+      "setor": "Centro Cirúrgico",
+      "descricao": "Relatos de humilhações públicas durante procedimentos cirúrgicos por parte da chefia médica",
+      "frequencia": "Semanal",
+      "status": "Em apuração",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 2,
+      "protocolo": "PULSO-2024-002",
+      "tipo": "Sobrecarga",
+      "setor": "UTI",
+      "descricao": "Escala de 48h seguidas sem descanso adequado em período de férias da equipe",
+      "frequencia": "Eventual",
+      "status": "Medida adotada",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 3,
+      "protocolo": "PULSO-2024-003",
+      "tipo": "Violência",
+      "setor": "Pronto-socorro",
+      "descricao": "Agressão verbal de familiar de paciente, sem suporte institucional posterior ao incidente",
+      "frequencia": "Frequente",
+      "status": "Recebido",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 4,
+      "protocolo": "PULSO-2024-004",
+      "tipo": "Discriminação",
+      "setor": "Administrativo",
+      "descricao": "Tratamento diferenciado por gênero na distribuição de tarefas e promoções de cargo",
+      "frequencia": "Contínua",
+      "status": "Recebido",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 5,
+      "protocolo": "PULSO-2024-005",
+      "tipo": "Assédio Sexual",
+      "setor": "Internação",
+      "descricao": "Comentários e comportamentos inadequados e persistentes de superior hierárquico",
+      "frequencia": "Recorrente",
+      "status": "Encerrado",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 6,
+      "protocolo": "PULSO-2026-0580",
+      "tipo": "Sobrecarga",
+      "setor": "UTI",
+      "descricao": "Teste de denúncia anônima",
+      "frequencia": "Frequente",
+      "status": "Recebido",
+      "created_at": "2026-06-01T16:59:10.580Z"
+    }
+  ],
+  "denunciaUpdates": [
+    {
+      "id": 1,
+      "denuncia_id": 2,
+      "status": "Em apuração",
+      "observacao": "Caso registrado e encaminhado para CIPA e RH",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 2,
+      "denuncia_id": 2,
+      "status": "Medida adotada",
+      "observacao": "Revisão de escala aprovada pela direção. 3 colaboradores contratados temporariamente.",
+      "created_at": "2026-06-01T16:52:53.954Z"
+    },
+    {
+      "id": 3,
+      "denuncia_id": 5,
+      "status": "Em apuração",
+      "observacao": "Comissão de apuração formada conforme Lei 14.457/2022",
+      "created_at": "2026-06-01T16:52:53.955Z"
+    },
+    {
+      "id": 4,
+      "denuncia_id": 5,
+      "status": "Medida adotada",
+      "observacao": "Afastamento preventivo do denunciado. Sessões de apoio psicológico oferecidas.",
+      "created_at": "2026-06-01T16:52:53.955Z"
+    },
+    {
+      "id": 5,
+      "denuncia_id": 5,
+      "status": "Encerrado",
+      "observacao": "Processo administrativo concluído. Medida disciplinar aplicada.",
+      "created_at": "2026-06-01T16:52:53.955Z"
+    }
+  ],
+  "trainings": [
+    {
+      "id": 1,
+      "titulo": "Riscos Psicossociais e NR-1 (Portaria MTE 1.419/2024)",
+      "descricao": "Fundamentos dos riscos psicossociais, exigências da NR-1 2024, instrumentos de avaliação COPSOQ-II e responsabilidades do SESMT",
+      "categoria": "Obrigatório NR-1",
+      "obrigatorio": true,
+      "duracao_horas": 4,
+      "nr_base": "NR-1 §1.7 Anexo II",
+      "lei_base": null,
+      "thumbnail_color": "#004D40",
+      "created_at": "2026-06-01T16:52:53.955Z"
+    },
+    {
+      "id": 2,
+      "titulo": "Prevenção ao Assédio no Ambiente Hospitalar",
+      "descricao": "Conceitos, reconhecimento e denúncia de assédio moral e sexual. Canais de apoio, CIPA e responsabilidades da organização",
+      "categoria": "Obrigatório Legal",
+      "obrigatorio": true,
+      "duracao_horas": 3,
+      "nr_base": null,
+      "lei_base": "Lei 14.457/2022",
+      "thumbnail_color": "#BF360C",
+      "created_at": "2026-06-01T16:52:53.955Z"
+    },
+    {
+      "id": 3,
+      "titulo": "NR-32: Segurança e Saúde em Serviços de Saúde",
+      "descricao": "Riscos biológicos, químicos e físicos. EPIs, biossegurança, gestão de resíduos e acidentes com material biológico",
+      "categoria": "Obrigatório NR-32",
+      "obrigatorio": true,
+      "duracao_horas": 6,
+      "nr_base": "NR-32",
+      "lei_base": null,
+      "thumbnail_color": "#E65100",
+      "created_at": "2026-06-01T16:52:53.955Z"
+    },
+    {
+      "id": 6,
+      "titulo": "NR-17: Ergonomia no Ambiente Hospitalar",
+      "descricao": "Condições ergonômicas, postura, movimentação de pacientes, organização do trabalho e cargas cognitivas",
+      "categoria": "Obrigatório NR-17",
+      "obrigatorio": true,
+      "duracao_horas": 4,
+      "nr_base": "NR-17",
+      "lei_base": null,
+      "thumbnail_color": "#2E7D32",
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 4,
+      "titulo": "Comunicação Não-Violenta para Líderes Hospitalares",
+      "descricao": "Técnicas de comunicação empática e resolução de conflitos. Redução de agressividade e melhoria do clima organizacional",
+      "categoria": "Desenvolvimento de Liderança",
+      "obrigatorio": false,
+      "duracao_horas": 8,
+      "nr_base": null,
+      "lei_base": null,
+      "thumbnail_color": "#1976D2",
+      "created_at": "2026-06-01T16:52:53.955Z"
+    },
+    {
+      "id": 5,
+      "titulo": "Gestão do Estresse e Prevenção ao Burnout",
+      "descricao": "Identificação e manejo do estresse ocupacional. Estratégias de autocuidado e resiliência para profissionais de saúde",
+      "categoria": "Saúde Mental",
+      "obrigatorio": false,
+      "duracao_horas": 5,
+      "nr_base": "NR-1",
+      "lei_base": null,
+      "thumbnail_color": "#6A1B9A",
+      "created_at": "2026-06-01T16:52:53.956Z"
+    }
+  ],
+  "progress": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "training_id": 1,
+      "progress": 100,
+      "completed": true,
+      "certificate_date": "2024-02-15",
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "training_id": 2,
+      "progress": 100,
+      "completed": true,
+      "certificate_date": "2024-02-20",
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "training_id": 3,
+      "progress": 75,
+      "completed": false,
+      "certificate_date": null,
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 4,
+      "user_id": 1,
+      "training_id": 4,
+      "progress": 30,
+      "completed": false,
+      "certificate_date": null,
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 5,
+      "user_id": 1,
+      "training_id": 5,
+      "progress": 0,
+      "completed": false,
+      "certificate_date": null,
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 6,
+      "user_id": 1,
+      "training_id": 6,
+      "progress": 100,
+      "completed": true,
+      "certificate_date": "2024-03-01",
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 7,
+      "user_id": 2,
+      "training_id": 1,
+      "progress": 100,
+      "completed": true,
+      "certificate_date": "2024-02-18",
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 8,
+      "user_id": 2,
+      "training_id": 3,
+      "progress": 60,
+      "completed": false,
+      "certificate_date": null,
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 9,
+      "user_id": 3,
+      "training_id": 1,
+      "progress": 100,
+      "completed": true,
+      "certificate_date": "2024-02-22",
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 10,
+      "user_id": 3,
+      "training_id": 2,
+      "progress": 45,
+      "completed": false,
+      "certificate_date": null,
+      "created_at": "2026-06-01T16:52:53.956Z"
+    },
+    {
+      "id": 11,
+      "user_id": 3,
+      "training_id": 6,
+      "progress": 80,
+      "completed": false,
+      "certificate_date": null,
+      "created_at": "2026-06-01T16:52:53.957Z"
+    }
+  ],
+  "pgrHistory": [
+    {
+      "id": 1,
+      "version": "v1.0 — 2024-01-15",
+      "action_summary": "Inventário inicial: 8 perigos identificados, 3 planos de ação criados. Elaboração PGR inaugural.",
+      "created_by": 1,
+      "created_at": "2026-06-01T16:52:53.957Z"
+    },
+    {
+      "id": 2,
+      "version": "v1.1 — 2024-02-10",
+      "action_summary": "Atualização pós-diagnóstico COPSOQ-II: 2 novos perigos identificados. Planos de ação atualizados.",
+      "created_by": 1,
+      "created_at": "2026-06-01T16:52:53.957Z"
+    },
+    {
+      "id": 3,
+      "version": "v1.2 — 2024-03-05",
+      "action_summary": "Inclusão de riscos originados de denúncias (Canal Anônimo). Total: 12 perigos, 5 planos de ação.",
+      "created_by": 1,
+      "created_at": "2026-06-01T16:52:53.957Z"
+    }
+  ],
+  "advisorMessages": [],
+  "_seq": {
+    "users": 5,
+    "risks": 13,
+    "actions": 5,
+    "denuncias": 6,
+    "denunciaUpdates": 5,
+    "trainings": 6,
+    "progress": 11,
+    "pgrHistory": 3,
+    "sessions": 30
+  }
+}
