@@ -2,12 +2,15 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
+const fs = require('fs');
 
 require('./database'); // initialize + seed
 
 const app = express();
+const isProd = process.env.NODE_ENV === 'production';
 
-app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:5173'], credentials: true }));
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ limit: '2mb' }));
 
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 300 });
@@ -23,6 +26,15 @@ app.use('/api/treinamentos', require('./routes/treinamentos'));
 app.use('/api/advisor', require('./routes/advisor'));
 
 app.get('/api/health', (_, res) => res.json({ status: 'ok', app: 'PULSO NR-1', version: '1.0.0' }));
+
+// Em produção serve o frontend compilado
+const distPath = path.join(__dirname, '../../frontend/dist');
+if (isProd && fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
 
 app.use((err, req, res, next) => {
   console.error(err);
