@@ -1,8 +1,11 @@
 const router = require('express').Router();
 const db = require('../database');
 const auth = require('../middleware/auth');
+const { requireRole } = auth;
 
-router.get('/metrics', auth, (req, res) => {
+const canView = requireRole('rh', 'cfo');
+
+router.get('/metrics', auth, canView, (req, res) => {
   const activeRisks = db.findAll('risks', { status: 'Ativo' });
   const totalRisks = activeRisks.length;
   const criticalRisks = activeRisks.filter(r => r.nivel_risco_calculado === 'Crítico').length;
@@ -21,7 +24,7 @@ router.get('/metrics', auth, (req, res) => {
   if (actionsTotal > 0) compliance += 15;
   if (actionsDone / Math.max(actionsTotal, 1) > 0.3) compliance += 15;
   if (trainingsCompleted > 0) compliance += 20;
-  compliance += 10; // canal de denúncias ativo
+  compliance += 10;
   compliance += Math.min(20, Math.round((actionsDone / Math.max(actionsTotal, 1)) * 20));
 
   res.json({
@@ -33,7 +36,7 @@ router.get('/metrics', auth, (req, res) => {
   });
 });
 
-router.get('/risks-by-sector', auth, (req, res) => {
+router.get('/risks-by-sector', auth, canView, (req, res) => {
   const active = db.findAll('risks', { status: 'Ativo' });
   const areas = [...new Set(active.map(r => r.area))].sort();
   const rows = areas.map(area => {
@@ -49,7 +52,7 @@ router.get('/risks-by-sector', auth, (req, res) => {
   res.json(rows);
 });
 
-router.get('/diagnostico-by-sector', auth, (req, res) => {
+router.get('/diagnostico-by-sector', auth, canView, (req, res) => {
   const sectors = ['UTI', 'Pronto-socorro', 'Internação', 'Centro Cirúrgico', 'Administrativo'];
   const allSessions = db.findAll('sessions');
   const result = sectors.map(sector => {
@@ -62,21 +65,17 @@ router.get('/diagnostico-by-sector', auth, (req, res) => {
   res.json(result);
 });
 
-router.get('/pgr-timeline', auth, (req, res) => {
+router.get('/pgr-timeline', auth, canView, (req, res) => {
   const history = db.findAll('pgrHistory').sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
   res.json(history);
 });
 
-router.get('/alerts', auth, (req, res) => {
+router.get('/alerts', auth, canView, (req, res) => {
   const allActions = db.findAll('actions');
   const allRisks = db.findAll('risks');
   const lateActions = allActions
-    .filter(a => a.status === 'Atrasado')
-    .slice(0, 5)
-    .map(a => {
-      const risk = allRisks.find(r => r.id === a.risk_id);
-      return { ...a, area: risk?.area || '—' };
-    });
+    .filter(a => a.status === 'Atrasado').slice(0, 5)
+    .map(a => ({ ...a, area: allRisks.find(r => r.id === a.risk_id)?.area || '—' }));
   const newComplaints = db.findAll('denuncias', { status: 'Recebido' }).slice(0, 3);
   res.json({ lateActions, newComplaints });
 });

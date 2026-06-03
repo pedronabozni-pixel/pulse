@@ -5,9 +5,10 @@
       "name": "Administrador SESMT",
       "email": "admin@saolucas.com.br",
       "password_hash": "$2a$10$UGV9BPlzMesonGAsKfapou49v/1M8DyiEHgJ6dCraakQTmbYMnTQ6",
-      "role": "admin",
+      "role": "rh",
       "sector": "SESMT",
-      "created_at": "2026-06-01T16:52:53.701Z"
+      "created_at": "2026-06-01T16:52:53.701Z",
+      "updated_at": "2026-06-03T16:50:56.117Z"
     },
     {
       "id": 2,
@@ -40,10 +41,55 @@
       "id": 5,
       "name": "Roberto Alves (CFO)",
       "email": "cfo@saolucas.com.br",
-      "password_hash": "$2a$10$amnrulcT2aAHUrXyUq8kDOHdp8SvaIn1AnFNj4afGLiLsG2WnkiEe",
+      "password_hash": "$2a$10$63qwSYjhDVGkDweM4lLc5e1vW.mj1XaJJt08YE0QilyW6nNPQKVTy",
       "role": "cfo",
       "sector": "Administrativo",
       "created_at": "2026-06-01T16:52:53.951Z"
+    },
+    {
+      "id": 6,
+      "name": "Ana Lima",
+      "email": "rh@saolucas.com.br",
+      "role": "rh",
+      "sector": "RH",
+      "password_hash": "$2a$10$jfcXl9wVkUaEDu8/0Mvdr.z7ia1clY40JCEIp228Az0ie8kRrriWm",
+      "created_at": "2026-06-03T16:49:06.558Z"
+    },
+    {
+      "id": 7,
+      "name": "Dr. Marcus Andrade",
+      "email": "juridico@saolucas.com.br",
+      "role": "juridico",
+      "sector": "Jurídico",
+      "password_hash": "$2a$10$NyHcA5rNtaEkkrxW35GULuuiD.kPEO6oMDSItH4bqQylhcRjdl.6S",
+      "created_at": "2026-06-03T16:49:06.623Z"
+    },
+    {
+      "id": 8,
+      "name": "Enf. Patricia Costa",
+      "email": "gestor@saolucas.com.br",
+      "role": "gestor",
+      "sector": "UTI",
+      "password_hash": "$2a$10$evv56Zfag8xXcvoH37o9gOeKtL05rNdxY.osnQlHPRrqml2XvcQdK",
+      "created_at": "2026-06-03T16:49:06.686Z"
+    },
+    {
+      "id": 9,
+      "name": "João da Silva",
+      "email": "colaborador@saolucas.com.br",
+      "role": "colaborador",
+      "sector": "Internação",
+      "password_hash": "$2a$10$aHVcN6HF15wDVxXtqAw9IOhRxJit7vsfHSdEQvYfttClSMJ6Fuljy",
+      "created_at": "2026-06-03T16:49:06.751Z"
+    },
+    {
+      "id": 10,
+      "name": "Lucas Mendes",
+      "email": "ti@saolucas.com.br",
+      "role": "ti",
+      "sector": "TI",
+      "password_hash": "$2a$10$kbZb2wIzJ312ioEADzWyaOulI9sYqZfpTw.1Ml8IDBLve9Jp7xWui",
+      "created_at": "2026-06-03T16:49:06.820Z"
     }
   ],
   "risks": [
@@ -946,7 +992,7 @@
   ],
   "advisorMessages": [],
   "_seq": {
-    "users": 5,
+    "users": 10,
     "risks": 13,
     "actions": 5,
     "denuncias": 6,

@@ -74,9 +74,30 @@ function count(table, filter = {}) { return findAll(table, filter).length; }
 const db = { insert, findAll, findOne, update, remove, count, save, get data() { return DB; } };
 module.exports = db;
 
+// ── MIGRATE — adiciona usuários novos sem re-seed ────────────────────────────
+function migrate() {
+  const h = pw => bcrypt.hashSync(pw, 10);
+  const roleUsers = [
+    { name: 'Ana Lima', email: 'rh@saolucas.com.br', role: 'rh', sector: 'RH' },
+    { name: 'Dr. Marcus Andrade', email: 'juridico@saolucas.com.br', role: 'juridico', sector: 'Jurídico' },
+    { name: 'Enf. Patricia Costa', email: 'gestor@saolucas.com.br', role: 'gestor', sector: 'UTI' },
+    { name: 'João da Silva', email: 'colaborador@saolucas.com.br', role: 'colaborador', sector: 'Internação' },
+    { name: 'Roberto Alves', email: 'cfo@saolucas.com.br', role: 'cfo', sector: 'Administrativo' },
+    { name: 'Lucas Mendes', email: 'ti@saolucas.com.br', role: 'ti', sector: 'TI' },
+  ];
+  roleUsers.forEach(u => {
+    if (!findOne('users', { email: u.email })) {
+      insert('users', { ...u, password_hash: h('pulso123') });
+      console.log(`➕ Usuário criado: ${u.email} (${u.role})`);
+    }
+  });
+  // Garante que admin tem role 'rh'
+  update('users', { email: 'admin@saolucas.com.br' }, { role: 'rh' });
+}
+
 // ── SEED ────────────────────────────────────────────────────────────────────
 function seed() {
-  if (DB.users.length > 0) return;
+  if (DB.users.length > 0) { migrate(); return; }
   console.log('🌱 Populando banco de dados...');
 
   const h = pw => bcrypt.hashSync(pw, 10);
@@ -184,6 +205,7 @@ function seed() {
   });
 
   console.log('✅ Banco de dados populado com sucesso!');
+  migrate();
 }
 
 seed();

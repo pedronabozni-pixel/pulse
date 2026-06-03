@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const db = require('../database');
 const auth = require('../middleware/auth');
+const { requireRole } = auth;
 
 const QUESTIONS = [
   { id: 'q1', step: 2, text: 'Com que frequência você tem trabalho em quantidade excessiva?', domain: 'Demandas Quantitativas', reverse: false },
@@ -45,8 +46,10 @@ const SCALE = [
   { value: 5, label: 'Sempre / Quase sempre' },
 ];
 
+// Perguntas: acesso público (formulário anônimo do colaborador)
 router.get('/questions', (req, res) => res.json({ questions: QUESTIONS, scale: SCALE }));
 
+// Submit: público — colaborador anônimo pode responder
 router.post('/submit', (req, res) => {
   const { sector, turno, tempo_funcao, respostas } = req.body;
   if (!sector || !respostas) return res.status(400).json({ error: 'Dados incompletos' });
@@ -64,11 +67,11 @@ router.post('/submit', (req, res) => {
   const token = `tok_${Date.now().toString(36)}`;
 
   db.insert('sessions', { session_token: token, sector, turno: turno || null, tempo_funcao: tempo_funcao || null, respostas: JSON.stringify(respostas), score, nivel_risco });
-
   res.json({ protocolo: token, score, nivel_risco, message: 'Resposta registrada anonimamente. Obrigado pela participação.' });
 });
 
-router.get('/results', auth, (req, res) => {
+// Resultados: RH e Jurídico (leitura)
+router.get('/results', auth, requireRole('rh', { readOnly: ['juridico'] }), (req, res) => {
   const sectors = ['UTI', 'Pronto-socorro', 'Internação', 'Centro Cirúrgico', 'Administrativo'];
   const allSessions = db.findAll('sessions');
   const results = sectors.map(sector => {
